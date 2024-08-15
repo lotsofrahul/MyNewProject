@@ -9,176 +9,10 @@ import {
   ScrollView,
 } from 'react-native';
 import style1 from './Styles/style1';
+import users from './Utilities/Users';
 
 const App = () => {
   const [value, setValue] = useState('');
-
-  const users = [
-    {
-      id: 2,
-      name: 'frfrf',
-    },
-    {
-      id: 23,
-      name: 'frfrf',
-    },
-    {
-      id: 25,
-      name: 'frfrf',
-    },
-    {
-      id: 1,
-      name: 'frfrf',
-    },
-    {
-      id: 27,
-      name: 'frfrf',
-    },
-    {
-      id: 23,
-      name: 'frfrf',
-    },
-    {
-      id: 25,
-      name: 'frfrf',
-    },
-    {
-      id: 1,
-      name: 'frfrf',
-    },
-    {
-      id: 27,
-      name: 'frfrf',
-    },
-    {
-      id: 23,
-      name: 'frfrf',
-    },
-    {
-      id: 25,
-      name: 'frfrf',
-    },
-    {
-      id: 1,
-      name: 'frfrf',
-    },
-    {
-      id: 27,
-      name: 'frfrf',
-    },
-    {
-      id: 25,
-      name: 'frfrf',
-    },
-    {
-      id: 1,
-      name: 'frfrf',
-    },
-    {
-      id: 27,
-      name: 'frfrf',
-    },
-    {
-      id: 23,
-      name: 'frfrf',
-    },
-    {
-      id: 25,
-      name: 'frfrf',
-    },
-    {
-      id: 1,
-      name: 'frfrf',
-    },
-    {
-      id: 27,
-      name: 'frfrf',
-    },
-    {
-      id: 25,
-      name: 'frfrf',
-    },
-    {
-      id: 1,
-      name: 'frfrf',
-    },
-    {
-      id: 27,
-      name: 'frfrf',
-    },
-    {
-      id: 23,
-      name: 'frfrf',
-    },
-    {
-      id: 25,
-      name: 'frfrf',
-    },
-    {
-      id: 1,
-      name: 'frfrf',
-    },
-    {
-      id: 27,
-      name: 'frfrf',
-    },
-    {
-      id: 25,
-      name: 'frfrf',
-    },
-    {
-      id: 1,
-      name: 'frfrf',
-    },
-    {
-      id: 27,
-      name: 'frfrf',
-    },
-    {
-      id: 23,
-      name: 'frfrf',
-    },
-    {
-      id: 25,
-      name: 'frfrf',
-    },
-    {
-      id: 1,
-      name: 'frfrf',
-    },
-    {
-      id: 27,
-      name: 'frfrf',
-    },
-    {
-      id: 25,
-      name: 'frfrf',
-    },
-    {
-      id: 1,
-      name: 'frfrf',
-    },
-    {
-      id: 27,
-      name: 'frfrf',
-    },
-    {
-      id: 23,
-      name: 'frfrf',
-    },
-    {
-      id: 25,
-      name: 'frfrf',
-    },
-    {
-      id: 1,
-      name: 'frfrf',
-    },
-    {
-      id: 27,
-      name: 'frfrf',
-    },
-  ];
   return (
     <View>
       <Text style={{fontSize: 30, color: 'red'}}>Hello Hai ....</Text>
@@ -211,9 +45,16 @@ const App = () => {
       /> */}
 
       <ScrollView>
-        {users.map(item => (
-          <Text style={{fontSize: 40}}>{item.name}</Text>
-        ))}
+        <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap'}}>
+          {users.map(item => (
+            <Text
+              style={{
+                fontSize: 40,
+              }}>
+              {item.name}
+            </Text>
+          ))}
+        </View>
       </ScrollView>
     </View>
   );
