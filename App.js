@@ -19,6 +19,11 @@ const App = () => {
       placeholder='Enter something'
       value={value}
       onChangeText={(text)=>(setValue(text))}/>
+      <TextInput style={{margin:10,fontSize:30,borderColor:'red',borderWidth:2}} 
+      placeholder='Enter Password'
+      value={value}
+      secureTextEntry={true}
+      onChangeText={(text)=>(setValue(text))}/>
       <Button title='Clear Text' onPress={()=>{setValue("")}}/>
     </View>
   );
