@@ -6,6 +6,7 @@ import {
   Button,
   TextInput,
   FlatList,
+  ScrollView,
 } from 'react-native';
 import style1 from './Styles/style1';
 
@@ -15,6 +16,150 @@ const App = () => {
   const users = [
     {
       id: 2,
+      name: 'frfrf',
+    },
+    {
+      id: 23,
+      name: 'frfrf',
+    },
+    {
+      id: 25,
+      name: 'frfrf',
+    },
+    {
+      id: 1,
+      name: 'frfrf',
+    },
+    {
+      id: 27,
+      name: 'frfrf',
+    },
+    {
+      id: 23,
+      name: 'frfrf',
+    },
+    {
+      id: 25,
+      name: 'frfrf',
+    },
+    {
+      id: 1,
+      name: 'frfrf',
+    },
+    {
+      id: 27,
+      name: 'frfrf',
+    },
+    {
+      id: 23,
+      name: 'frfrf',
+    },
+    {
+      id: 25,
+      name: 'frfrf',
+    },
+    {
+      id: 1,
+      name: 'frfrf',
+    },
+    {
+      id: 27,
+      name: 'frfrf',
+    },
+    {
+      id: 25,
+      name: 'frfrf',
+    },
+    {
+      id: 1,
+      name: 'frfrf',
+    },
+    {
+      id: 27,
+      name: 'frfrf',
+    },
+    {
+      id: 23,
+      name: 'frfrf',
+    },
+    {
+      id: 25,
+      name: 'frfrf',
+    },
+    {
+      id: 1,
+      name: 'frfrf',
+    },
+    {
+      id: 27,
+      name: 'frfrf',
+    },
+    {
+      id: 25,
+      name: 'frfrf',
+    },
+    {
+      id: 1,
+      name: 'frfrf',
+    },
+    {
+      id: 27,
+      name: 'frfrf',
+    },
+    {
+      id: 23,
+      name: 'frfrf',
+    },
+    {
+      id: 25,
+      name: 'frfrf',
+    },
+    {
+      id: 1,
+      name: 'frfrf',
+    },
+    {
+      id: 27,
+      name: 'frfrf',
+    },
+    {
+      id: 25,
+      name: 'frfrf',
+    },
+    {
+      id: 1,
+      name: 'frfrf',
+    },
+    {
+      id: 27,
+      name: 'frfrf',
+    },
+    {
+      id: 23,
+      name: 'frfrf',
+    },
+    {
+      id: 25,
+      name: 'frfrf',
+    },
+    {
+      id: 1,
+      name: 'frfrf',
+    },
+    {
+      id: 27,
+      name: 'frfrf',
+    },
+    {
+      id: 25,
+      name: 'frfrf',
+    },
+    {
+      id: 1,
+      name: 'frfrf',
+    },
+    {
+      id: 27,
       name: 'frfrf',
     },
     {
@@ -59,11 +204,17 @@ const App = () => {
         }}
       />
 
-      <FlatList
+      {/* <FlatList
         data={users}
         renderItem={({item}) => <Text>{item.name}</Text>}
-        keyExtractor={item=>item.id}
-      />
+        keyExtractor={item => item.id}
+      /> */}
+
+      <ScrollView>
+        {users.map(item => (
+          <Text style={{fontSize: 40}}>{item.name}</Text>
+        ))}
+      </ScrollView>
     </View>
   );
 };
