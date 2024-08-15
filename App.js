@@ -7,6 +7,7 @@ import {
   TextInput,
   FlatList,
   ScrollView,
+  SectionList,
 } from 'react-native';
 import style1 from './Styles/style1';
 import users from './Utilities/Users';
