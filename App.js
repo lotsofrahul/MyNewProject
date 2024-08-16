@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   //These are called components, like tags in HTML
   View,
@@ -14,6 +14,13 @@ import users from './Utilities/Users';
 
 const App = () => {
   const [value, setValue] = useState('');
+  //runs when a component/state/prop change(when mouting happen)
+  useEffect(() => {
+    console.warn('jb');
+  }, []); //empty array => component did mount (runs only after mounting)
+  useEffect(() => {
+    console.warn('jb');
+  }, [value]); //passing state/prop, useEffect runs only when these state/prop updates. (component did update)
   return (
     <View>
       <Text style={{fontSize: 30, color: 'red'}}>Hello Hai ....</Text>
