@@ -11,16 +11,21 @@ import {
 } from 'react-native';
 import style1 from './Styles/style1';
 import users from './Utilities/Users';
+import Util2 from './Utilities/Util2';
 
 const App = () => {
   const [value, setValue] = useState('');
+  const [show, setShow] = useState(true);
   //runs when a component/state/prop change(when mouting happen)
-  useEffect(() => {
-    console.warn('jb');
-  }, []); //empty array => component did mount (runs only after mounting)
-  useEffect(() => {
-    console.warn('jb');
-  }, [value]); //passing state/prop, useEffect runs only when these state/prop updates. (component did update)
+  // useEffect(() => {
+  //   console.warn('jb');
+  // }, []); //empty array => component did mount (runs only after mounting)
+  // useEffect(() => {
+  //   console.warn('jb');
+  // }, [value]); //passing state/prop, useEffect runs only when these state/prop updates. (component did update)
+
+  //useEffect when component Unmount
+
   return (
     <View>
       <Text style={{fontSize: 30, color: 'red'}}>Hello Hai ....</Text>
@@ -52,7 +57,7 @@ const App = () => {
         keyExtractor={item => item.id}
       /> */}
 
-      <ScrollView>
+      {/* <ScrollView>
         <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap'}}>
           {users.map(item => (
             <Text
@@ -63,7 +68,9 @@ const App = () => {
             </Text>
           ))}
         </View>
-      </ScrollView>
+      </ScrollView> */}
+      <Button title="Toggle" onPress={() => setShow(!show)} />
+      {show ? <Util2 /> : null}
     </View>
   );
 };
