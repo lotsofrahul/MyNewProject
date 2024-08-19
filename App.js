@@ -9,6 +9,7 @@ import {
   ScrollView,
   SectionList,
   Pressable,
+  StatusBar,
 } from 'react-native';
 import Style1 from './Styles/Style1';
 import Users from './Utilities/Users';
@@ -84,6 +85,7 @@ const App = () => {
         onPressOut={console.warn('out')}>
         <Text>Submit</Text>
       </Pressable>
+      <StatusBar backgroundColor="red" barStyle="dark-content" hidden={true} />
     </View>
   );
 };
