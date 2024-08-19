@@ -15,6 +15,7 @@ import {
 import Style1 from './Styles/Style1';
 import Users from './Utilities/Users';
 import Util2 from './Utilities/Util2';
+import {WebView} from 'react-native-webview';
 
 const App = () => {
   const [value, setValue] = useState('');
@@ -89,6 +90,11 @@ const App = () => {
       <StatusBar backgroundColor="red" barStyle="dark-content" hidden={true} />
       <Text>{Platform.OS}</Text>
       <Text>{Platform.constants.reactNativeVersion}</Text>
+      <WebView
+        source={{
+          uri: 'https://chatgpt.com/c/e8d7f030-3bdf-43b4-907a-c13a71f99666',
+        }}
+      />
     </View>
   );
 };
