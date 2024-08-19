@@ -8,6 +8,7 @@ import {
   FlatList,
   ScrollView,
   SectionList,
+  Pressable,
 } from 'react-native';
 import Style1 from './Styles/Style1';
 import Users from './Utilities/Users';
@@ -72,10 +73,17 @@ const App = () => {
     //   <Button title="Toggle" onPress={() => setShow(!show)} />
     //   {show ? <Util2 /> : null}
     // </View>
-    <View style={{flex:1}}>
-      <View style={{flex:1,backgroundColor:'red'}} ></View>
-      <View style={{flex:1,backgroundColor:'yellow'}} ></View>
-      <View style={{flex:1,backgroundColor:'blue'}} ></View>
+    <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: 'red'}}></View>
+      <View style={{flex: 1, backgroundColor: 'yellow'}}></View>
+      <View style={{flex: 1, backgroundColor: 'blue'}}></View>
+      <Pressable
+        onPress={() => console.warn('normal on press')}
+        onLongPress={() => console.warn('long press')}
+        onPressIn={() => console.warn('in')}
+        onPressOut={console.warn('out')}>
+        <Text>Submit</Text>
+      </Pressable>
     </View>
   );
 };
