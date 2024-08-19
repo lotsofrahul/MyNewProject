@@ -10,6 +10,7 @@ import {
   SectionList,
   Pressable,
   StatusBar,
+  Platform,
 } from 'react-native';
 import Style1 from './Styles/Style1';
 import Users from './Utilities/Users';
@@ -86,6 +87,8 @@ const App = () => {
         <Text>Submit</Text>
       </Pressable>
       <StatusBar backgroundColor="red" barStyle="dark-content" hidden={true} />
+      <Text>{Platform.OS}</Text>
+      <Text>{Platform.constants.reactNativeVersion}</Text>
     </View>
   );
 };
