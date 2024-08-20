@@ -101,7 +101,8 @@ const App = () => {
 
       <NavigationContainer>
         <Stack.Navigator
-          screenOptions={{   //style to all screens
+          screenOptions={{
+            //style to all screens
             headerStyle: {
               backgroundColor: 'black',
             },
@@ -113,9 +114,10 @@ const App = () => {
           <Stack.Screen
             name="Login"
             component={Login}
-            options={{       //style to single screen
-              headerTitle:()=><Button title='left'/>,
-              headerRight:()=><Button title='right'/>,
+            options={{
+              //style to single screen
+              headerTitle: () => <Button title="left" />,
+              headerRight: () => <Button title="right" />,
               headerStyle: {
                 backgroundColor: 'black',
               },
@@ -132,16 +134,21 @@ const App = () => {
   );
 };
 
-const Home = () => {
+const Home = props => {
+  const {name, age} = props.route.params;
+  console.log(name);
+  console.log(age);
   return <View></View>;
 };
 
 const Login = props => {
+  const name = 'Huk';
+  const age = '22';
   return (
     <View>
       <Button
         title="Go to Home Page"
-        onPress={() => props.navigation.navigate('Home')}
+        onPress={() => props.navigation.navigate('Home', {name, age})}
       />
     </View>
   );
