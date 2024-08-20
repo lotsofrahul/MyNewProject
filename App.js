@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
   //These are called components, like tags in HTML
   View,
@@ -12,14 +12,17 @@ import {
   StatusBar,
   Platform,
 } from 'react-native';
-import Style1 from './Styles/Style1';
-import Users from './Utilities/Users';
-import Util2 from './Utilities/Util2';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+// import Style1 from './Styles/Style1';
+// import Users from './Utilities/Users';
+// import Util2 from './Utilities/Util2';
 import {WebView} from 'react-native-webview';
 
 const App = () => {
-  const [value, setValue] = useState('');
-  const [show, setShow] = useState(true);
+  const Stack = createNativeStackNavigator();
+  // const [value, setValue] = useState('');
+  // const [show, setShow] = useState(true);
   //runs when a component/state/prop change(when mouting happen)
   // useEffect(() => {
   //   console.warn('jb');
@@ -94,6 +97,51 @@ const App = () => {
         source={{
           uri: 'https://chatgpt.com/c/e8d7f030-3bdf-43b4-907a-c13a71f99666',
         }}
+      />
+
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{   //style to all screens
+            headerStyle: {
+              backgroundColor: 'black',
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+              fontSize: '25',
+            },
+          }}>
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{       //style to single screen
+              headerTitle:()=><Button title='left'/>,
+              headerRight:()=><Button title='right'/>,
+              headerStyle: {
+                backgroundColor: 'black',
+              },
+              headerTintColor: 'white',
+              headerTitleStyle: {
+                fontSize: '25',
+              },
+            }}
+          />
+          <Stack.Screen name="Home" component={Home} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </View>
+  );
+};
+
+const Home = () => {
+  return <View></View>;
+};
+
+const Login = props => {
+  return (
+    <View>
+      <Button
+        title="Go to Home Page"
+        onPress={() => props.navigation.navigate('Home')}
       />
     </View>
   );
